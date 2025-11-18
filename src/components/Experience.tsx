@@ -6,7 +6,7 @@ const Experience: React.FC = () => {
   const experience = {
     title: 'Full Stack Developer',
     company: 'Kalasalingam Academy of Research and Education (KARE)',
-    duration: '2025 – Present',
+    duration: '2025 May – Present',
     location: 'Tamil Nadu, India',
     description: 'At KARE, I am responsible for designing and delivering a complete Full Stack Event Hall Management & Event Registration System. The platform manages hall bookings, event scheduling, registrations, user roles, admin dashboards, and real-time status tracking. I lead both backend and frontend development, ensuring optimized performance, clean UI, and secure workflows.',
     techStack: [
