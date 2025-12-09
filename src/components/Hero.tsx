@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, Youtube } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
@@ -36,10 +36,6 @@ const Hero: React.FC = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, titles]);
 
-  const handleResumeDownload = () => {
-    // Open Google Drive link in new tab
-    window.open('https://drive.google.com/drive/folders/1b6vxrA7sAUVzAjewnWFM2k_8t7DosatH?usp=drive_link', '_blank');
-  };
 
   return (
     <section className="min-h-screen relative z-10 flex items-center justify-center px-4">
@@ -367,10 +363,10 @@ const Hero: React.FC = () => {
           >
             {[
               {
-                icon: Download,
-                label: "Download Resume",
-                onClick: handleResumeDownload,
-                gradient: "from-electric-blue to-neon-violet",
+                icon: Youtube,
+                label: "YouTube",
+                href: "https://www.youtube.com/@HUNGRYSAVER",
+                gradient: "from-red-600 to-red-700",
                 delay: 0
               },
               {
@@ -412,63 +408,34 @@ const Hero: React.FC = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {button.onClick ? (
-                  <motion.button
-                    className={`flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r ${button.gradient} text-white rounded-xl font-semibold text-sm hover-glow relative overflow-hidden group`}
-                    onClick={button.onClick}
+                <motion.a
+                  href={button.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r ${button.gradient} text-white rounded-xl font-semibold text-sm hover-glow relative overflow-hidden group`}
+                >
+                  {/* Animated Background */}
+                  <motion.div
+                    className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100"
+                    animate={{
+                      x: [-100, 100],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      repeatDelay: 2
+                    }}
+                  ></motion.div>
+
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative z-10"
                   >
-                    {/* Animated Background */}
-                    <motion.div
-                      className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100"
-                      animate={{
-                        x: [-100, 100],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatDelay: 2
-                      }}
-                    ></motion.div>
-                    
-                    <motion.div
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="relative z-10"
-                    >
-                      <button.icon size={18} />
-                    </motion.div>
-                    <span className="relative z-10">{button.label}</span>
-                  </motion.button>
-                ) : (
-                  <motion.a
-                    href={button.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r ${button.gradient} text-white rounded-xl font-semibold text-sm hover-glow relative overflow-hidden group`}
-                  >
-                    {/* Animated Background */}
-                    <motion.div
-                      className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100"
-                      animate={{
-                        x: [-100, 100],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        repeatDelay: 2
-                      }}
-                    ></motion.div>
-                    
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className="relative z-10"
-                    >
-                      <button.icon size={18} />
-                    </motion.div>
-                    <span className="relative z-10">{button.label}</span>
-                  </motion.a>
-                )}
+                    <button.icon size={18} />
+                  </motion.div>
+                  <span className="relative z-10">{button.label}</span>
+                </motion.a>
               </motion.div>
             ))}
           </motion.div>

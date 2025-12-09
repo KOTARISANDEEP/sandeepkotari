@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Brain, Server, PenTool, Video, Lightbulb } from 'lucide-react';
+import { Code, Brain, Server, Lightbulb } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
@@ -26,25 +26,11 @@ const Services: React.FC = () => {
       gradient: 'from-soft-green to-electric-blue'
     },
     {
-      icon: PenTool,
-      title: 'Content Writing & Blogging',
-      description: 'SEO-friendly, high-quality technical content for blogs, websites, and personal branding — written to convert and engage.',
-      image: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600',
-      gradient: 'from-electric-blue to-neon-violet'
-    },
-    {
-      icon: Video,
-      title: 'Video Editing & Voice-Over Creation',
-      description: 'Tech videos, reels, AI explainers — complete editing with effects, subtitles, and pro voice-overs using tools like CapCut and ElevenLabs.',
-      image: 'https://images.pexels.com/photos/7688047/pexels-photo-7688047.jpeg?auto=compress&cs=tinysrgb&w=600',
-      gradient: 'from-neon-violet to-soft-green'
-    },
-    {
       icon: Lightbulb,
       title: 'Project Exploration & Tech Guidance',
       description: 'I help individuals and startups brainstorm, structure, and scale their ideas into real-world tech solutions.',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
-      gradient: 'from-soft-green to-electric-blue'
+      gradient: 'from-electric-blue to-neon-violet'
     }
   ];
 
@@ -93,7 +79,7 @@ const Services: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {services.map((service, index) => (
             <motion.div
