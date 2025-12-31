@@ -1,7 +1,7 @@
 [build]
-  base = "."
-  publish = "dist"
-  command = "npm install && npm run build"
+  base = "project"
+  publish = "project/dist"
+  command = "cd project && npm install && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -14,12 +14,16 @@
 
 # Critical: Fix MIME type for JavaScript module files
 # This fixes the "application/octet-stream" error
+# Must match the exact path where JS files are served
 [[headers]]
   for = "/assets/*.js"
   [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
+    Content-Type = "application/javascript"
+    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
+    Content-Type = "application/javascript"
+    X-Content-Type-Options = "nosniff"
+
