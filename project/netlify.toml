@@ -13,12 +13,13 @@
   status = 200
 
 # Critical: Fix MIME type for JavaScript module files
+# This fixes the "application/octet-stream" error
 [[headers]]
   for = "/assets/*.js"
   [headers.values]
-    Content-Type = "application/javascript"
+    Content-Type = "application/javascript; charset=utf-8"
 
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Content-Type = "application/javascript"
+    Content-Type = "application/javascript; charset=utf-8"
