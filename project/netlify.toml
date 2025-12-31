@@ -11,18 +11,20 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
-
+# Critical: Set MIME types for JavaScript modules
 [[headers]]
   for = "/assets/*.js"
   [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
+    Content-Type = "application/javascript"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "/assets/*.css"
   [headers.values]
-    Content-Type = "text/css; charset=utf-8"
-
+    Content-Type = "text/css"
