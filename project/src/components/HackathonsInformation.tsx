@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Award, Medal, Star, FileText } from 'lucide-react';
+import ManaChennuru from './ManaChennuru';
 
 const HackathonsInformation: React.FC = () => {
   // Scroll to top immediately on page load
@@ -417,6 +418,11 @@ const HackathonsInformation: React.FC = () => {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Mana Chennuru Section (same design) */}
+        <div className="mt-20">
+          <ManaChennuru />
+        </div>
       </div>
     </div>
   );
