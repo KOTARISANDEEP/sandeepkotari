@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Hackathons from './components/Hackathons';
 import Projects from './components/Projects';
+import ManaChennuru from './components/ManaChennuru';
 import Services from './components/Services';
 import HungrySaver from './components/HungrySaver';
 import Contact from './components/Contact';
@@ -23,6 +24,7 @@ function HomePage() {
       <Experience />
       <Hackathons />
       <Projects />
+      <ManaChennuru />
       <Services />
       <HungrySaver />
       <Contact />
@@ -41,7 +43,7 @@ function App() {
           <Route path="/aranyajal-information" element={<AranyaJalInformation />} />
           <Route path="/hackathons-information" element={<HackathonsInformation />} />
         </Routes>
-      </div>
+    </div>
     </Router>
   );
 }

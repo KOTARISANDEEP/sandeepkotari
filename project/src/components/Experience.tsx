@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
         'SQL authentication for secure login and access control',
         'Admin panel for managing registrations and participants',
         'Scalable database design for high-volume records'
-      ]
+    ]
     }
   ];
 
@@ -100,11 +100,11 @@ const Experience: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-8 items-start">
               {/* Left Column - Logo */}
               <div className="flex justify-center md:justify-start items-start">
-                <motion.div
+              <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
                   className="w-full flex items-center justify-center"
                 >
                   <img
@@ -128,11 +128,11 @@ const Experience: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <MapPin size={16} />
                       <span>Tamil Nadu, India</span>
-                    </div>
+                </div>
                     <div className="flex items-center gap-2">
-                      <Calendar size={16} />
+                    <Calendar size={16} />
                       <span>01/09/2025 – 01/12/2025</span>
-                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -149,39 +149,39 @@ const Experience: React.FC = () => {
                 viewport={{ once: true }}
               >
                 At Kalasalingam Academy of Research and Education (KARE), I designed and delivered a complete Full Stack Event Hall Management and Event Registration System. The platform supports hall bookings, event scheduling, bulk student registrations, role-based access, and admin dashboards with real-time status tracking. I handled both backend and frontend development, focusing on SQL-based authentication, secure workflows, optimized database performance, and a clean, user-friendly interface suitable for institutional-scale usage.
-              </motion.p>
+            </motion.p>
 
               {/* Project List with Image */}
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Left Column - Project List */}
                 <div className="space-y-6">
                   {projects.map((project, index) => (
-                    <motion.div
+            <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
+              viewport={{ once: true }}
+            >
                       <h4 className="text-xl font-bold mb-3 text-electric-blue">
                         {project.name}
                       </h4>
                       <div className="space-y-2">
                         {project.features.map((feature, featureIndex) => (
-                          <motion.div
+                  <motion.div
                             key={featureIndex}
                             className="flex items-start gap-3"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: featureIndex * 0.05 }}
-                            viewport={{ once: true }}
-                          >
+                    viewport={{ once: true }}
+                  >
                             <div className="w-2 h-2 rounded-full bg-soft-green mt-2 flex-shrink-0"></div>
                             <span className="text-gray-300">{feature}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
                   ))}
                 </div>
 
@@ -204,20 +204,20 @@ const Experience: React.FC = () => {
                 </motion.div>
               </div>
 
-              {/* Tech Stack */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                viewport={{ once: true }}
+            {/* Tech Stack */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
                 className="pt-4 border-t border-white/10"
-              >
+            >
                 <h4 className="text-lg font-bold mb-3 text-neon-violet">Tech Stack</h4>
                 <p className="text-gray-300">
                   Laravel · MS SQL    · CSS · JavaScript · REST APIs
                 </p>
-              </motion.div>
-            </div>
+                  </motion.div>
+              </div>
 
             {/* Corner Tech Accents */}
             <div className="absolute top-4 right-4 w-8 h-8 opacity-30 group-hover:opacity-60 transition-opacity duration-300">
