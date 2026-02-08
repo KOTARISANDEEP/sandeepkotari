@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StarField from './components/StarField';
 import HungrySaverInformation from './components/HungrySaverInformation';
+import HungrySaverVerification from './components/HungrySaverVerification';
 import AranyaJalInformation from './components/AranyaJalInformation';
 import HackathonsInformation from './components/HackathonsInformation';
 
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/hungrysaver-information" element={<HungrySaverInformation />} />
+          <Route path="/hungrysaver-verification" element={<HungrySaverVerification />} />
           <Route path="/aranyajal-information" element={<AranyaJalInformation />} />
           <Route path="/hackathons-information" element={<HackathonsInformation />} />
         </Routes>

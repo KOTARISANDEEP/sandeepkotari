@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const HungrySaverInformation: React.FC = () => {
@@ -109,7 +110,7 @@ const HungrySaverInformation: React.FC = () => {
             >
               {/* Image */}
               <motion.div
-                className={`${section.imageLeft ? '' : 'md:col-start-2'}`}
+                className={`${section.imageLeft ? '' : 'md:col-start-2'} flex flex-col sm:flex-row gap-4 items-stretch sm:items-center`}
                 initial={{ opacity: 0, x: section.imageLeft ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -117,7 +118,7 @@ const HungrySaverInformation: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div 
-                  className="relative overflow-hidden rounded-2xl glass-morphism p-2 group"
+                  className="relative overflow-hidden rounded-2xl glass-morphism p-2 group flex-1 min-w-0"
                   whileHover={{
                     boxShadow: '0 0 30px rgba(59, 130, 246, 0.3)',
                   }}
@@ -133,6 +134,14 @@ const HungrySaverInformation: React.FC = () => {
                     style={{ boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)' }}
                   />
                 </motion.div>
+                {index === 0 && (
+                  <Link
+                    to="/hungrysaver-verification"
+                    className="shrink-0 px-6 py-3 rounded-xl font-medium bg-electric-blue/20 border border-electric-blue/50 text-electric-blue hover:bg-electric-blue/30 hover:border-electric-blue transition-colors duration-200 shadow-lg"
+                  >
+                    Verification & Proof
+                  </Link>
+                )}
               </motion.div>
 
               {/* Text */}
