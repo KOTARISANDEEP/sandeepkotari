@@ -2,7 +2,18 @@ import React, { useEffect } from 'react';
 
 const APPROVAL_LETTER_IMAGE = '/assets/images/WhatsApp Image 2025-12-31 at 19.44.45.jpeg';
 const SANDEEP_IMAGE = '/assets/images/sandeep id.jpeg';
+const SANDEEP_NEW_IMAGE = '/assets/images/1.png';
 const POSTER_IMAGE = '/assets/images/hungry saver poster_page-0001.jpg';
+
+const founder = {
+  name: 'Kotari Sandeep',
+  registerNo: '99220040900',
+  department: 'Computer Science and Engineering',
+  role: 'Founder',
+  mobile: '8317579761',
+  image: SANDEEP_IMAGE,
+  newImage: SANDEEP_NEW_IMAGE,
+};
 
 const volunteers = [
   {
@@ -13,6 +24,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '8977881981',
     image: '/assets/images/hasika id.jpeg',
+    newImage: '/assets/images/2.png',
   },
   {
     name: 'Sreekanth',
@@ -22,6 +34,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '8309023616',
     image: '/assets/images/sreekanth id.jpeg',
+    newImage: '/assets/images/4.png',
   },
   {
     name: 'Sweety',
@@ -31,6 +44,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '7331163490',
     image: '/assets/images/saroj sweety id.jpeg',
+    newImage: '/assets/images/3.png',
   },
   {
     name: 'Vijay',
@@ -40,6 +54,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '7204946793',
     image: '/assets/images/vinay.jpeg',
+    newImage: '/assets/images/5.png',
   },
   {
     name: 'Jyothi',
@@ -49,6 +64,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '8309059828',
     image: '/assets/images/jyothi id.jpeg',
+    newImage: '/assets/images/6.png',
   },
   {
     name: 'T. Bhavana',
@@ -58,6 +74,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '9390839194',
     image: '/assets/images/bhavana id.jpeg',
+    newImage: '/assets/images/7.png',
   },
   {
     name: 'Lokesh',
@@ -67,6 +84,7 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '7670890286',
     image: '/assets/images/lokesh id.jpg',
+    newImage: '/assets/images/8.png',
   },
   {
     name: 'Vekash',
@@ -76,62 +94,106 @@ const volunteers = [
     role: 'Volunteer',
     mobile: '7989530389',
     image: '/assets/images/vekash id.jpeg',
+    newImage: '/assets/images/9.png',
+  },
+  {
+    name: 'Punendra Teja',
+    program: 'B.Tech',
+    department: 'Computer Science and Engineering',
+    registerNo: '99220041674',
+    role: 'Volunteer',
+    mobile: '9121042899',
+    image: '/assets/images/teja id_page-0001.jpg',
+    newImage: '/assets/images/11.png',
+  },
+  {
+    name: 'Sudeep',
+    program: 'B.Tech',
+    department: 'Computer Science and Engineering',
+    registerNo: '99220040896',
+    role: 'Volunteer',
+    mobile: '9542657361',
+    image: '/assets/images/sudeepid.jpeg',
+    newImage: '/assets/images/10.png',
+  },
+  {
+    name: 'Siva Charan',
+    program: 'B.Tech',
+    department: 'Computer Science and Engineering',
+    registerNo: '99220041071',
+    role: 'Volunteer',
+    mobile: '7780263695',
+    image: '/assets/images/siva charan id.jpeg',
+    newImage: '/assets/images/12.png',
   },
 ];
 
-function PlaceholderImage() {
+function InfoRow({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
-    <div
-      className="w-full aspect-[3/4] rounded-xl bg-dark-accent border border-glass-border flex items-center justify-center text-gray-500"
-      aria-hidden
-    >
-      <span className="text-sm">Photo</span>
+    <div className="py-3 px-4 rounded-lg bg-dark-accent/50 border border-glass-border/50">
+      <p className="text-electric-blue/90 text-xs font-medium uppercase tracking-wider mb-1">{label}</p>
+      <p className={`text-sm ${highlight ? 'text-white font-semibold' : 'text-gray-300'}`}>{value}</p>
     </div>
   );
 }
 
-function VolunteerCard({
-  volunteer,
-  imageLeft,
-}: {
-  volunteer: (typeof volunteers)[0];
-  imageLeft: boolean;
-}) {
-  const imageBlock = volunteer.image ? (
-    <img
-      src={volunteer.image}
-      alt={volunteer.name}
-      className="w-full h-auto object-cover rounded-xl aspect-[3/4]"
-    />
-  ) : (
-    <PlaceholderImage />
+function FounderInfoCard() {
+  return (
+    <div className="glass-morphism rounded-2xl p-5 h-full flex flex-col justify-center space-y-3">
+      <div className="flex items-center justify-between gap-3 mb-2">
+        <h3 className="text-lg font-semibold text-white truncate">{founder.name}</h3>
+        <span className="shrink-0 px-3 py-1 rounded-full bg-electric-blue/20 text-electric-blue text-xs font-semibold border border-electric-blue/40">
+          Founder
+        </span>
+      </div>
+      <InfoRow label="Name" value={founder.name} highlight />
+      <InfoRow label="Register No" value={founder.registerNo} />
+      <InfoRow label="Department" value={founder.department} />
+      <InfoRow label="Role" value={founder.role} />
+      <InfoRow label="Mobile" value={founder.mobile} />
+    </div>
   );
+}
 
-  const detailsBlock = (
-    <div className="glass-morphism p-6 rounded-xl h-full flex flex-col justify-center">
-      <p className="text-dark-accent/80 text-sm mb-1">Name</p>
-      <p className="text-white font-medium mb-4">{volunteer.name}</p>
-      <p className="text-dark-accent/80 text-sm mb-1">Program</p>
-      <p className="text-gray-300 mb-4">{volunteer.program}</p>
-      <p className="text-dark-accent/80 text-sm mb-1">Department</p>
-      <p className="text-gray-300 mb-4">{volunteer.department}</p>
-      <p className="text-dark-accent/80 text-sm mb-1">Register No</p>
-      <p className="text-gray-300 mb-4">{volunteer.registerNo}</p>
-      <p className="text-dark-accent/80 text-sm mb-1">Role</p>
-      <p className="text-gray-300 mb-4">{volunteer.role}</p>
-      <p className="text-dark-accent/80 text-sm mb-1">Mobile</p>
-      <p className="text-gray-300">{volunteer.mobile}</p>
+function VolunteerInfoCard({ volunteer }: { volunteer: (typeof volunteers)[0] }) {
+  return (
+    <div className="glass-morphism rounded-2xl p-5 h-full flex flex-col justify-center space-y-3">
+      <div className="flex items-center justify-between gap-3 mb-2">
+        <h3 className="text-lg font-semibold text-white truncate">{volunteer.name}</h3>
+        <span className="shrink-0 px-3 py-1 rounded-full bg-soft-green/20 text-soft-green text-xs font-semibold border border-soft-green/40">
+          Volunteer
+        </span>
+      </div>
+      <InfoRow label="Name" value={volunteer.name} highlight />
+      <InfoRow label="Program" value={volunteer.program} />
+      <InfoRow label="Department" value={volunteer.department} />
+      <InfoRow label="Register No" value={volunteer.registerNo} />
+      <InfoRow label="Role" value={volunteer.role} />
+      <InfoRow label="Mobile" value={volunteer.mobile} />
+    </div>
+  );
+}
+
+const CARD_ROW_MIN_HEIGHT = 'min-h-[400px]';
+
+function VolunteerCard({ volunteer }: { volunteer: (typeof volunteers)[0] }) {
+  const imageBlock = (src: string, alt: string) => (
+    <div className="flex-1 flex min-h-0 rounded-2xl overflow-hidden glass-morphism p-2 shadow-lg items-center justify-center">
+      <img
+        src={src}
+        alt={alt}
+        className="w-auto max-w-full h-auto max-h-full object-contain rounded-xl"
+      />
     </div>
   );
 
   return (
-    <div
-      className={`grid md:grid-cols-2 gap-6 items-stretch ${
-        imageLeft ? '' : 'md:grid-flow-col-dense'
-      }`}
-    >
-      <div className={imageLeft ? '' : 'md:col-start-2'}>{imageBlock}</div>
-      <div className={imageLeft ? '' : 'md:col-start-1'}>{detailsBlock}</div>
+    <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 ${CARD_ROW_MIN_HEIGHT} items-stretch`}>
+      <div className={`${CARD_ROW_MIN_HEIGHT} flex flex-col min-h-0`}>{imageBlock(volunteer.image, `${volunteer.name} – ID`)}</div>
+      <div className={`${CARD_ROW_MIN_HEIGHT} flex flex-col justify-center min-h-0`}>
+        <VolunteerInfoCard volunteer={volunteer} />
+      </div>
+      <div className={`${CARD_ROW_MIN_HEIGHT} flex flex-col min-h-0`}>{imageBlock(volunteer.newImage, `${volunteer.name} – Verification`)}</div>
     </div>
   );
 }
@@ -143,7 +205,7 @@ const HungrySaverVerification: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-dark-bg text-white relative overflow-x-hidden">
-      <div className="max-w-5xl mx-auto px-4 py-16 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 py-16 md:py-20">
         <h1 className="text-3xl md:text-4xl font-bold mb-14 text-center md:text-left">
           Hungry Saver – Verification & Proof
         </h1>
@@ -197,37 +259,23 @@ const HungrySaverVerification: React.FC = () => {
           <h2 className="text-xl font-semibold text-gray-200 mb-6">
             Founder & Student Verification
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
-            <div className="rounded-2xl overflow-hidden glass-morphism p-2 shadow-lg">
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-stretch ${CARD_ROW_MIN_HEIGHT}`}>
+            <div className={`${CARD_ROW_MIN_HEIGHT} flex flex-col min-h-0 rounded-2xl overflow-hidden glass-morphism p-2 shadow-lg items-center justify-center`}>
               <img
-                src={SANDEEP_IMAGE}
-                alt="Kotari Sandeep"
-                className="w-full h-auto object-cover rounded-xl aspect-[3/4]"
+                src={founder.image}
+                alt="Kotari Sandeep – ID"
+                className="w-auto max-w-full h-auto max-h-full object-contain rounded-xl"
               />
             </div>
-            <div className="glass-morphism p-6 rounded-2xl flex flex-col justify-center">
-              <div className="space-y-4">
-                <div>
-                  <p className="text-dark-accent/80 text-sm">Name</p>
-                  <p className="text-white font-medium">Kotari Sandeep</p>
-                </div>
-                <div>
-                  <p className="text-dark-accent/80 text-sm">Register No</p>
-                  <p className="text-gray-300">99220040900</p>
-                </div>
-                <div>
-                  <p className="text-dark-accent/80 text-sm">Department</p>
-                  <p className="text-gray-300">Computer Science and Engineering</p>
-                </div>
-                <div>
-                  <p className="text-dark-accent/80 text-sm">Role</p>
-                  <p className="text-gray-300">Founder</p>
-                </div>
-                <div>
-                  <p className="text-dark-accent/80 text-sm">Mobile</p>
-                  <p className="text-gray-300">8317579761</p>
-                </div>
-              </div>
+            <div className={`${CARD_ROW_MIN_HEIGHT} flex flex-col justify-center min-h-0`}>
+              <FounderInfoCard />
+            </div>
+            <div className={`${CARD_ROW_MIN_HEIGHT} flex flex-col min-h-0 rounded-2xl overflow-hidden glass-morphism p-2 shadow-lg items-center justify-center`}>
+              <img
+                src={founder.newImage}
+                alt="Kotari Sandeep – Verification"
+                className="w-auto max-w-full h-auto max-h-full object-contain rounded-xl"
+              />
             </div>
           </div>
         </section>
@@ -258,15 +306,12 @@ const HungrySaverVerification: React.FC = () => {
             Verified Volunteer Team
           </h2>
           <div className="space-y-10">
-            {volunteers.map((volunteer, index) => (
+            {volunteers.map((volunteer) => (
               <div
                 key={volunteer.registerNo}
                 className="rounded-2xl glass-morphism p-4 md:p-6 shadow-inner-custom"
               >
-                <VolunteerCard
-                  volunteer={volunteer}
-                  imageLeft={index % 2 === 0}
-                />
+                <VolunteerCard volunteer={volunteer} />
               </div>
             ))}
           </div>
