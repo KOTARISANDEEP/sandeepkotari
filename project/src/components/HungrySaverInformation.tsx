@@ -116,6 +116,38 @@ const HungrySaverInformation: React.FC = () => {
       ],
       imageLeft: false,
     },
+
+    // Real impact photo sections using HungrySaver field images
+    {
+      image: '/assets/images/real3.png',
+      text: 'Moments like these show the real meaning of community support. Through HungrySaver, volunteers personally reach out with food and essential items, turning every contribution into a direct act of care.',
+      imageLeft: true,
+    },
+    {
+      image: '/assets/images/real5.jpeg',
+      text: 'Every donation carries hope. When these food packages and essentials reach families, the smiles on their faces reflect the true impact of collective kindness enabled by HungrySaver.',
+      imageLeft: false,
+    },
+    {
+      image: '/assets/images/real6.jpeg',
+      text: 'HungrySaver volunteers ensure that each donated item is handled with dignity and respect. By meeting people where they are, they transform surplus food into meaningful, real-world support.',
+      imageLeft: true,
+    },
+    {
+      image: '/assets/images/real7.jpeg',
+      text: 'These real field moments capture how coordinated efforts turn into life-changing support. Through organized collection, packaging, and delivery, HungrySaver makes sure that help reaches the right hands at the right time.',
+      imageLeft: false,
+    },
+    {
+      image: '/assets/images/real8.jpeg',
+      text: 'Behind every distributed meal is a story of humanity. HungrySaver is not just about providing food—it is about restoring confidence, easing daily burdens, and reminding people that they are not alone.',
+      imageLeft: true,
+    },
+    {
+      image: '/assets/images/real9.png',
+      text: 'These images represent real stories—volunteers listening, understanding, and responding to on-ground needs. With every visit and every delivery, HungrySaver builds trust and long-term connections within the communities it serves.',
+      imageLeft: false,
+    },
   ];
 
   const containerVariants = {
